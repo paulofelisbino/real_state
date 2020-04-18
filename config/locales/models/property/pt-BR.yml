@@ -1,0 +1,10 @@
+pt-BR:
+  activerecord:
+    models:
+      property:
+        one: Imóvel
+        other: Imóveis
+    attributes:
+      property:
+        price: 'Valor'
+        title: 'Título'
