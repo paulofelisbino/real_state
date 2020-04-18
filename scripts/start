@@ -1,0 +1,18 @@
+#!/bin/sh
+
+set -e
+
+if [ -f tmp/pids/server.pid ]; then
+  rm tmp/pids/server.pid
+fi
+
+# remove variables setted by ruby dockerfile image
+# https://bundler.io/v2.0/guides/bundler_docker_guide.html
+unset BUNDLE_PATH
+unset BUNDLE_BIN
+
+bundle check || bundle install
+
+# yarn install --check-files
+
+bundle exec rails s -b 0.0.0.0

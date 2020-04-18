@@ -1,0 +1,42 @@
+FROM ruby:2.7.1-alpine
+
+WORKDIR /app
+
+ENV PORT 3000
+ENV BUNDLER_VERSION=2.0.2
+
+EXPOSE $PORT
+
+RUN apk update && \
+    apk add \
+      binutils-gold \
+      build-base \
+      curl \
+      file \
+      g++ \
+      gcc \
+      git \
+      less \
+      libstdc++ \
+      libffi-dev \
+      libc-dev \
+      linux-headers \
+      libxml2-dev \
+      libxslt-dev \
+      libgcrypt-dev \
+      mariadb-dev \
+      make \
+      netcat-openbsd \
+      nodejs \
+      openssl \
+      pkgconfig \
+      postgresql-dev \
+      python \
+      tzdata \
+      yarn
+
+# install rails
+RUN gem install rails -v 5.2.4.2 && \
+    gem install bundler
+
+CMD [ "/bin/sh" ]
