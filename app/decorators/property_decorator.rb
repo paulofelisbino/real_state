@@ -1,16 +1,18 @@
 class PropertyDecorator < ApplicationDecorator
   delegate_all
 
-  # Define presentation-specific methods here. Helpers are accessed through
-  # `helpers` (aka `h`). You can override attributes, for example:
-  #
-  #   def created_at
-  #     helpers.content_tag :span, class: 'time' do
-  #       object.created_at.strftime("%a %m/%d/%y")
-  #     end
-  #   end
   def price
     format_to_currency(object.price)
   end
 
+  def dt_actions
+    links = []
+
+    edit_link = link_to('Editar', edit_admin_property_path(object), class: 'dt-action btn btn-info')
+    delete_link = link_to('Remover', admin_property_path(object), method: :delete, remote: true, class: 'dt-action btn btn-danger')
+
+    links << edit_link
+    links << delete_link
+    safe_join(links, '')
+  end
 end

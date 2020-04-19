@@ -17,36 +17,30 @@
 <div class="card shadow mb-4">
   <div class="card-body">
     <div class="table-responsive">
-      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+      <table
+        class="table table-bordered"
+        id="dataTable"
+        data-source="<%= @indexPresenter.datatable_source %>"
+        width="100%"
+        cellspacing="0"
+      >
         <thead>
           <tr>
             <th><%= t('activerecord.attributes.property.reference') %></th>
-            <th><%= t('activerecord.attributes.property.title') %></th>
+            <th><%= t('property.index.table.property_type') %></th>
             <th><%= t('activerecord.attributes.property.price') %></th>
-            <th></th>
             <th></th>
           </tr>
         </thead>
         <tfoot>
           <tr>
             <th><%= t('activerecord.attributes.property.reference') %></th>
-            <th><%= t('activerecord.attributes.property.title') %></th>
+            <th><%= t('property.index.table.property_type') %></th>
             <th><%= t('activerecord.attributes.property.price') %></th>
-            <th></th>
             <th></th>
           </tr>
         </tfoot>
-        <tbody>
-          <% @indexPresenter.properties.each do |property| %>
-            <tr>
-              <td><%= property.reference %></td>
-              <td><%= property.title %></td>
-              <td><%= property.price %></td>
-              <td>edit</td>
-              <td></td>
-            </tr>
-          <% end %>
-        </tbody>
+        <tbody></tbody>
       </table>
     </div>
   </div>

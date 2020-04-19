@@ -1,5 +1,5 @@
 class PropertyType < ApplicationRecord
   has_many :properties
 
-  validates :title, presence: true
+  validates :name, presence: true
 end

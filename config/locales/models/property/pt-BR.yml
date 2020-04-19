@@ -4,8 +4,13 @@ pt-BR:
       property:
         one: Imóvel
         other: Imóveis
+      property_type:
+        one: Tipo de Imóvel
+        other: Tipos de Imóvel
     attributes:
       property:
         price: 'Valor'
         reference: 'Referência'
         title: 'Título'
+      property_type:
+        title: 'Nome'

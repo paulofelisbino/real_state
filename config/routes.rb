@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
   namespace :admin do
-    resources :properties
+    concern :with_datatable do
+      post 'datatable', on: :collection
+    end
+
+    resources :properties, concerns: [:with_datatable]
 
     root to: "properties#index"
   end

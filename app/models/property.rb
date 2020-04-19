@@ -3,6 +3,14 @@ class Property < ApplicationRecord
 
   enum category: { sell: 0, rent: 1 }
 
+  delegate :name, to: :property_type, prefix: true
+
+  def self.validate_filter_category(filter)
+    category = filter.to_s.downcase.strip
+    raise ArgumentError, 'Invalid filter' unless category_enum_valid?(category)
+    true
+  end
+
   def self.category_enum_valid?(enum)
     return false unless category_enum_value(enum).present?
     true

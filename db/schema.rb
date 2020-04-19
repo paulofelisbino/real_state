@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2020_04_19_003723) do
   end
 
   create_table "property_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "title"
+    t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

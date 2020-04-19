@@ -3,5 +3,7 @@ pt-BR:
     index:
       title: 'Imóveis'
       subtitle:
-        rent: Locação
-        sell: Vendas
+        rent: 'Locação'
+        sell: 'Vendas'
+      table:
+        property_type: 'Tipo de imóvel'

@@ -4,3 +4,10 @@
 @import 'font_awesome5_webfont';
 @import 'sb-admin-2.min';
 
+.dt-action {
+  margin: 0 5px;
+}
+
+table.table-bordered.dataTable tbody th, table.table-bordered.dataTable tbody td {
+  vertical-align: middle;
+}

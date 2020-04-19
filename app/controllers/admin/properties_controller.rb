@@ -1,28 +1,30 @@
 module Admin
   class PropertiesController < ApplicationController
-    before_action :set_resources, only: [:index]
+    before_action :set_filter_category, only: [:index, :datatable]
 
     def index
       presenter_params = {
-        properties: @properties,
         filter_category: @filter_category
       }
       @indexPresenter = PropertyIndexPresenter.new(presenter_params)
     end
 
+    def datatable
+      datatable_params = {
+        filter_category: @filter_category
+      }
+      render json: PropertyDatatable.new(params, datatable_params)
+    end
+
     private
 
-    def set_resources
-      if permitted_params[:filter].nil?
-        @properties = Property.all
-        return
-      end
+    def set_filter_category
+      filter = permitted_params[:filter]
+      return if filter.nil?
 
-      category = permitted_params[:filter].to_s.downcase.strip
-      raise ArgumentError, 'Invalid filter' unless Property.category_enum_valid?(category)
+      Property.validate_filter_category(filter)
 
-      @properties = Property.send(category)
-      @filter_category = category
+      @filter_category = filter
     end
 
     def permitted_params

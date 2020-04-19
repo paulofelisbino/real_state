@@ -1,28 +1,21 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
 property_types = ['Residencial', 'Comercial', 'Terreno']
-property_types.map { |property_type| PropertyType.create(title: property_type) }
+property_types.map { |property_type| PropertyType.create(name: property_type) }
 
-properties = [
-  {
-    category: Property.categories[:rent],
-    price: 1000,
-    property_type: PropertyType.first,
-    reference: 'A0001',
-    title: 'Casa 1'
-  },
-  {
-    category: Property.categories[:rent],
-    price: 200000,
-    property_type: PropertyType.second,
-    reference: 'A0002',
-    title: 'Casa 2'
-  }
-]
-properties.map { |property| Property.create(property) }
+100.times.map do |n|
+  random_category = rand(0..1)
+
+  reference_letter = 'A'
+  reference_letter = 'C' if random_category == 0
+
+  reference_number = (n + 1).to_s.rjust(4, '0')
+
+  reference = "#{reference_letter}#{reference_number}"
+
+  Property.create({
+    category: random_category,
+    price: rand(1000...100000),
+    property_type: PropertyType.find( rand(1..3) ),
+    reference: reference,
+    title: "Casa #{n + 1}"
+  })
+end
