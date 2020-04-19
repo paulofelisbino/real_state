@@ -1,4 +1,7 @@
 pt-BR:
   property:
-    list:
-      title: 'LOL Imóveis'
+    index:
+      title: 'Imóveis'
+      subtitle:
+        rent: Locação
+        sell: Vendas

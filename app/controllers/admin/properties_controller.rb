@@ -1,46 +1,32 @@
 module Admin
   class PropertiesController < ApplicationController
-    # Overwrite any of the RESTful controller actions to implement custom behavior
-    # For example, you may want to send an email after a foo is updated.
-    #
-    # def update
-    #   super
-    #   send_foo_updated_email(requested_resource)
-    # end
+    before_action :set_resources, only: [:index]
 
-    # Override this method to specify custom lookup behavior.
-    # This will be used to set the resource for the `show`, `edit`, and `update`
-    # actions.
-    #
-    # def find_resource(param)
-    #   Foo.find_by!(slug: param)
-    # end
+    def index
+      presenter_params = {
+        properties: @properties,
+        filter_category: @filter_category
+      }
+      @indexPresenter = PropertyIndexPresenter.new(presenter_params)
+    end
 
-    # The result of this lookup will be available as `requested_resource`
+    private
 
-    # Override this if you have certain roles that require a subset
-    # this will be used to set the records shown on the `index` action.
-    #
-    # def scoped_resource
-    #   if current_user.super_admin?
-    #     resource_class
-    #   else
-    #     resource_class.with_less_stuff
-    #   end
-    # end
+    def set_resources
+      if permitted_params[:filter].nil?
+        @properties = Property.all
+        return
+      end
 
-    # Override `resource_params` if you want to transform the submitted
-    # data before it's persisted. For example, the following would turn all
-    # empty values into nil values. It uses other APIs such as `resource_class`
-    # and `dashboard`:
-    #
-    # def resource_params
-    #   params.require(resource_class.model_name.param_key).
-    #     permit(dashboard.permitted_attributes).
-    #     transform_values { |value| value == "" ? nil : value }
-    # end
+      category = permitted_params[:filter].to_s.downcase.strip
+      raise ArgumentError, 'Invalid filter' unless Property.category_enum_valid?(category)
 
-    # See https://administrate-prototype.herokuapp.com/customizing_controller_actions
-    # for more information
+      @properties = Property.send(category)
+      @filter_category = category
+    end
+
+    def permitted_params
+      params.permit(:filter)
+    end
   end
 end

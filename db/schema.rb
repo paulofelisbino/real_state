@@ -10,10 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_18_190614) do
+ActiveRecord::Schema.define(version: 2020_04_19_003723) do
 
   create_table "properties", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.decimal "price", precision: 5, scale: 2
+    t.integer "bathrooms"
+    t.integer "category"
+    t.text "description"
+    t.boolean "furniture"
+    t.integer "parking_space"
+    t.boolean "pet_friendly"
+    t.integer "property_type_id"
+    t.decimal "price", precision: 10, scale: 2
+    t.string "reference"
+    t.integer "rooms"
+    t.integer "size"
+    t.string "title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category"], name: "index_properties_on_category"
+    t.index ["property_type_id"], name: "index_properties_on_property_type_id"
+  end
+
+  create_table "property_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

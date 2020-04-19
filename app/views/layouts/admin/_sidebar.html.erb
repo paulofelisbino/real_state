@@ -30,8 +30,9 @@
     </a>
     <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
-        <a class="collapse-item" href="buttons.html">Locação</a>
-        <a class="collapse-item" href="cards.html">Venda</a>
+        <a class="collapse-item" href="<%= admin_properties_path %>">Todos</a>
+        <a class="collapse-item" href="<%= admin_properties_path(filter: 'rent') %>">Locação</a>
+        <a class="collapse-item" href="<%= admin_properties_path(filter: 'sell') %>">Venda</a>
       </div>
     </div>
   </li>

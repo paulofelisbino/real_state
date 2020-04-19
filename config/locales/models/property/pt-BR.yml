@@ -7,4 +7,5 @@ pt-BR:
     attributes:
       property:
         price: 'Valor'
+        reference: 'Referência'
         title: 'Título'
