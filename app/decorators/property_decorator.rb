@@ -1,8 +1,17 @@
 class PropertyDecorator < ApplicationDecorator
   delegate_all
 
+  CATEGORY_MAPPING = {
+    sell: I18n.t('activerecord.enums.property.category.sell'),
+    rent: I18n.t('activerecord.enums.property.category.rent'),
+  }
+
   def price
     format_to_currency(object.price)
+  end
+
+  def mapped_category
+    CATEGORY_MAPPING[object.category.to_sym]
   end
 
   def dt_actions

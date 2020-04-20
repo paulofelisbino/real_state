@@ -7,3 +7,5 @@ pt-BR:
         sell: 'Vendas'
       table:
         property_type: 'Tipo de imóvel'
+    edit:
+      title: 'Editando Imóvel'

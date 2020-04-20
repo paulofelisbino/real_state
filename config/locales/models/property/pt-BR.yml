@@ -9,8 +9,24 @@ pt-BR:
         other: Tipos de Imóvel
     attributes:
       property:
+        bathrooms: 'Banheiros'
+        category: 'Categoria'
+        description: 'Descrição'
+        furniture: 'Mobiliado'
+        parking_space: 'Vagas'
+        pet_friendly: 'Aceita pet'
         price: 'Valor'
+        property_type: 'Tipo de imóvel'
         reference: 'Referência'
+        rooms: 'Quartos'
+        size: 'Área (m²)'
         title: 'Título'
       property_type:
-        title: 'Nome'
+        name: 'Nome'
+    enums:
+      property:
+        category:
+          sell: 'Vendas'
+          rent: 'Locação'
+
+  

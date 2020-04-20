@@ -11,11 +11,13 @@ property_types.map { |property_type| PropertyType.create(name: property_type) }
 
   reference = "#{reference_letter}#{reference_number}"
 
-  Property.create({
+  Property.create!({
     category: random_category,
+    description: 'Uma casa.',
     price: rand(1000...100000),
     property_type: PropertyType.find( rand(1..3) ),
     reference: reference,
+    size: 48,
     title: "Casa #{n + 1}"
   })
 end

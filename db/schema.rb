@@ -13,16 +13,16 @@
 ActiveRecord::Schema.define(version: 2020_04_19_003723) do
 
   create_table "properties", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "bathrooms"
+    t.integer "bathrooms", default: 0
     t.integer "category"
     t.text "description"
-    t.boolean "furniture"
-    t.integer "parking_space"
-    t.boolean "pet_friendly"
+    t.boolean "furniture", default: false
+    t.integer "parking_space", default: 0
+    t.boolean "pet_friendly", default: false
     t.integer "property_type_id"
     t.decimal "price", precision: 10, scale: 2
     t.string "reference"
-    t.integer "rooms"
+    t.integer "rooms", default: 0
     t.integer "size"
     t.string "title"
     t.datetime "created_at", null: false

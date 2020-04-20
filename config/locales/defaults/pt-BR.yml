@@ -1,5 +1,7 @@
 ---
 pt-BR:
+  actions:
+    back: 'Voltar'
   activerecord:
     errors:
       messages:

@@ -5,6 +5,9 @@ class Property < ApplicationRecord
 
   delegate :name, to: :property_type, prefix: true
 
+  validates :bathrooms, :category, :description, :parking_space, :price,
+            :reference, :rooms, :size, :title, presence: true
+
   def self.validate_filter_category(filter)
     category = filter.to_s.downcase.strip
     raise ArgumentError, 'Invalid filter' unless category_enum_valid?(category)

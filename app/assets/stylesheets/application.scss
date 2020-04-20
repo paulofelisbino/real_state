@@ -1,8 +1,9 @@
 
 // Custom bootstrap variables must be set or imported *before* bootstrap.
-// @import "bootstrap";
+@import "bootstrap";
 @import 'font_awesome5_webfont';
 @import 'sb-admin-2.min';
+@import "simple_form-bootstrap/simple_form-bootstrap";
 
 .dt-action {
   margin: 0 5px;
