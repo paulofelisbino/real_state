@@ -10,6 +10,10 @@ module Admin
       @indexPresenter = PropertyIndexPresenter.new(presenter_params)
     end
 
+    def show
+      @property = @property.decorate
+    end
+
     def update
       respond_to do |format|
         if @property.update(property_params)

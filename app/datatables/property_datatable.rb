@@ -13,7 +13,7 @@ class PropertyDatatable < AjaxDatatablesRails::ActiveRecord
       {
         reference: record.reference,
         property_type: record.property_type_name,
-        price:  record.price,
+        price:  record.formatted_price,
         dt_actions: record.dt_actions,
         DT_RowId: record.id, # This will automagically set the id attribute on the corresponding <tr> in the datatable
       }

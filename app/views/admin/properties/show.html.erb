@@ -1,0 +1,72 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+  <h1 class="h3 mb-0 text-gray-800"><%= t('property.show.title') %></h1>
+
+  <div class="d-sm-flex align-items-center justify-content-between">
+    <a
+      href="<%= edit_admin_property_path(@property) %>"
+      class="d-none d-sm-inline-block btn btn-primary shadow-sm mr-2"
+    >
+      <i class="fas fa-edit fa-sm text-white-50"></i>
+      <%= t('actions.edit') %>
+    </a>
+
+    <a
+      href="<%= admin_properties_path %>"
+      class="d-none d-sm-inline-block btn btn-primary shadow-sm"
+    >
+      <i class="fas fa-arrow-circle-left fa-sm text-white-50"></i>
+      <%= t('actions.back') %>
+    </a>
+  </div>
+</div>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong><%= t('activerecord.attributes.property.category') %>:</strong>
+  <%= @property.mapped_category %>
+</p>
+<p>
+  <strong><%= t('activerecord.attributes.property.property_type') %>:</strong>
+  <%= @property.property_type_name %>
+</p>
+<p>
+  <strong><%= t('activerecord.attributes.property.reference') %>:</strong>
+  <%= @property.reference %>
+</p>
+<p>
+  <strong><%= t('activerecord.attributes.property.title') %>:</strong>
+  <%= @property.title %>
+</p>
+<p>
+  <strong><%= t('activerecord.attributes.property.price') %>:</strong>
+  <%= @property.formatted_price %>
+</p>
+<p>
+  <strong><%= t('activerecord.attributes.property.size') %>:</strong>
+  <%= @property.size %>
+</p>
+<p>
+  <strong><%= t('activerecord.attributes.property.rooms') %>:</strong>
+  <%= @property.rooms %>
+</p>
+<p>
+  <strong><%= t('activerecord.attributes.property.bathrooms') %>:</strong>
+  <%= @property.bathrooms %>
+</p>
+<p>
+  <strong><%= t('activerecord.attributes.property.parking_space') %>:</strong>
+  <%= @property.parking_space %>
+</p>
+<p>
+  <strong><%= t('activerecord.attributes.property.furniture') %>:</strong>
+  <%= I18n.t("boolean.#{@property.furniture}") %>
+</p>
+<p>
+  <strong><%= t('activerecord.attributes.property.pet_friendly') %>:</strong>
+  <%= I18n.t("boolean.#{@property.pet_friendly}") %>
+</p>
+<p>
+  <strong><%= t('activerecord.attributes.property.description') %>:</strong>
+  <%= @property.description %>
+</p>

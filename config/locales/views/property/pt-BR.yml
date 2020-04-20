@@ -9,3 +9,5 @@ pt-BR:
         property_type: 'Tipo de imóvel'
     edit:
       title: 'Editando Imóvel'
+    show:
+      title: 'Visualizando Imóvel'
