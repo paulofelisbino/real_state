@@ -1,0 +1,10 @@
+$('.action-delete').bind('ajax:success', function(){
+  $('#dataTable').DataTable()
+    .row(
+      $("tr#<%= @property.id %>")
+    )
+    .remove()
+    .draw( false );
+
+  $('#flash-container').html("<%= j render 'shared/flash' %>");
+});

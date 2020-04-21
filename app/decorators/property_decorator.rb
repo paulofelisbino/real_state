@@ -16,37 +16,14 @@ class PropertyDecorator < ApplicationDecorator
 
   def dt_actions
     links = []
-    links << dt_link_show
-    links << dt_link_edit
-    links << dt_link_delete
+    links << dt_link_show(admin_property_path(object))
+    links << dt_link_edit(edit_admin_property_path(object))
+
+    delete_params = {
+      url: admin_property_path(object),
+      model: I18n.t('activerecord.models.property.one')
+    }
+    links << dt_link_delete(delete_params)
     safe_join(links, '')
-  end
-
-  private
-
-  def dt_link_show
-    link_to(
-      I18n.t('actions.view'),
-      admin_property_path(object),
-      class: 'dt-action btn btn-primary'
-    )
-  end
-
-  def dt_link_edit
-    link_to(
-      I18n.t('actions.edit'),
-      edit_admin_property_path(object),
-      class: 'dt-action btn btn-info'
-    )
-  end
-
-  def dt_link_delete
-    link_to(
-      I18n.t('actions.delete'),
-      admin_property_path(object),
-      method: :delete,
-      remote: true,
-      class: 'dt-action btn btn-danger'
-    )
   end
 end

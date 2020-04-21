@@ -17,11 +17,22 @@ module Admin
     def update
       respond_to do |format|
         if @property.update(property_params)
-          format.html { redirect_to admin_property_path(@property), notice: 'property was successfully updated.' }
-          format.json { render :show, status: :ok, location: @property }
+          format.html do
+            flash[:success] = I18n.t('actions.updated', model: I18n.t('activerecord.models.property.one'))
+            redirect_to admin_property_path(@property)
+          end
         else
-          format.html { render :edit }
-          format.json { render json: @property.errors, status: :unprocessable_entity }
+          format.html
+        end
+      end
+    end
+
+    def destroy
+      @property.destroy
+      respond_to do |format|
+        format.js do
+          flash.now[:success] = I18n.t('actions.deleted', model: I18n.t('activerecord.models.property.one'))
+          render layout: false, content_type: 'text/javascript'
         end
       end
     end

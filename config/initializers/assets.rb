@@ -12,4 +12,8 @@ Rails.application.config.assets.paths << Rails.root.join('node_modules')
 # application.js, application.css, and all non-JS/CSS in the app/assets
 # folder are already added.
 # Rails.application.config.assets.precompile += %w( admin.js admin.css )
-Rails.application.config.assets.precompile += %w( sb-admin-2.min.js datatables.js dataTables.bootstrap4.min.css)
+Rails.application.config.assets.precompile += %w(
+  sb-admin-2.min.js
+  datatables.js
+  dataTables.bootstrap4.min.css
+)

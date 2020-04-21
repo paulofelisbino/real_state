@@ -4,7 +4,11 @@ pt-BR:
     back: 'Voltar'
     view: 'Visualizar'
     edit: 'Editar'
-    delete: 'Apagar'
+    delete: 'Remover'
+    created: '%{model} criado com sucesso.'
+    updated: '%{model} editado com sucesso.'
+    deleted: '%{model} removido com sucesso.'
+    confirm: 'Você tem certeza?'
   activerecord:
     errors:
       messages:
