@@ -234,7 +234,7 @@ DEPENDENCIES
   capybara (>= 2.15)
   chromedriver-helper
   coffee-rails (~> 4.2)
-  data-confirm-modal
+  data-confirm-modal (~> 1.6.3)
   draper (~> 4.0.1)
   font_awesome5_rails (~> 1.1.1)
   jbuilder (~> 2.5)

@@ -11,16 +11,25 @@ class PropertyIndexPresenter
   end
 
   def subtitle
-    return unless filter_category.present?
-    content_tag(:p, class: 'mb-4') do
-      I18n.t("property.index.subtitle.#{filter_category}")
+    content_tag(:p) do
+      subtitle_text
     end
   end
 
   def datatable_source
+    return datatable_admin_properties_path(format: :json) if filter_category.nil?
+
     datatable_admin_properties_path(
       filter: filter_category,
       format: :json
     )
+  end
+
+  private
+
+  def subtitle_text
+    i18n = 'all'
+    i18n = filter_category if filter_category.present?
+    I18n.t("property.index.subtitle.#{i18n}")
   end
 end

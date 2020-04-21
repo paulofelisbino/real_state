@@ -10,9 +10,20 @@
   end
 %>
 
-<!-- Page Heading -->
-<h1 class="h3 mb-2 text-gray-800"><%= t('property.index.title') %></h1>
-<%= @indexPresenter.subtitle %>
+<div class="d-sm-flex align-items-center justify-content-between">
+  <div class="d-sm-flex flex-column align-items-left justify-content-between">
+    <h1 class="h3 mb-0 text-gray-800"><%= t('property.index.title') %></h1>
+    <%= @indexPresenter.subtitle %>
+  </div>
+
+  <a
+    href="<%= new_admin_property_path %>"
+    class="d-none d-sm-inline-block btn btn-primary shadow-sm"
+  >
+    <i class="fas fa-plus-circle fa-sm text-white-50"></i>
+    <%= t('actions.new') %>
+  </a>
+</div>
 
 <div class="card shadow mb-4">
   <div class="card-body">

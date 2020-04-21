@@ -4,6 +4,7 @@ pt-BR:
     back: 'Voltar'
     view: 'Visualizar'
     edit: 'Editar'
+    new: 'Adicionar'
     delete: 'Remover'
     created: '%{model} criado com sucesso.'
     updated: '%{model} editado com sucesso.'

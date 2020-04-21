@@ -14,6 +14,28 @@ module Admin
       @property = @property.decorate
     end
 
+    def new
+      @property = Property.new
+    end
+
+    def edit
+    end
+
+    def create
+      @property = Property.new(property_params)
+  
+      respond_to do |format|
+        if @property.save
+          format.html do
+            flash[:success] = I18n.t('actions.created', model: I18n.t('activerecord.models.property.one'))
+            redirect_to admin_property_path(@property)
+          end
+        else
+          format.html { render :new }
+        end
+      end
+    end
+
     def update
       respond_to do |format|
         if @property.update(property_params)

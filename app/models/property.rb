@@ -5,8 +5,10 @@ class Property < ApplicationRecord
 
   delegate :name, to: :property_type, prefix: true
 
-  validates :bathrooms, :category, :description, :parking_space, :price,
+  validates :bathrooms, :category, :parking_space, :price,
             :reference, :rooms, :size, :title, presence: true
+
+  validates :reference, uniqueness: true
 
   def self.validate_filter_category(filter)
     category = filter.to_s.downcase.strip

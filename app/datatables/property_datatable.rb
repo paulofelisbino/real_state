@@ -21,7 +21,7 @@ class PropertyDatatable < AjaxDatatablesRails::ActiveRecord
   end
 
   def filter_category
-    @filter_category ||= options[:filter_category]
+    @filter_category ||= options.fetch(:filter_category)
   end
 
   def get_raw_records
