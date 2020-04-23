@@ -20,3 +20,4 @@
 //= require jquery.easing.min.js
 //= require noty.min.js
 //= require data-confirm-modal
+//= require cleave.min.js

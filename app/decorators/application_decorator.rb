@@ -4,15 +4,6 @@ class ApplicationDecorator < Draper::Decorator
   include ActionDispatch::Routing
   include Rails.application.routes.url_helpers
 
-  def format_to_currency(value)
-    number_to_currency(
-      value,
-      unit: 'R$',
-      separator: ',',
-      delimiter: '.'
-    )
-  end
-
   def dt_link_show(url)
     link_to(
       I18n.t('actions.view'),

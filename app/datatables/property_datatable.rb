@@ -3,7 +3,7 @@ class PropertyDatatable < AjaxDatatablesRails::ActiveRecord
     @view_columns ||= {
       reference: { source: "Property.reference" },
       property_type: { source: "PropertyType.name" },
-      price: { source: "Property.price", formatter: sanitize_price }
+      price: { source: "Property.price_cents", formatter: sanitize_price }
     }
   end
 
@@ -13,7 +13,7 @@ class PropertyDatatable < AjaxDatatablesRails::ActiveRecord
       {
         reference: record.reference,
         property_type: record.property_type_name,
-        price:  record.formatted_price,
+        price:  record.price.format,
         dt_actions: record.dt_actions,
         DT_RowId: record.id, # This will automagically set the id attribute on the corresponding <tr> in the datatable
       }
@@ -33,10 +33,7 @@ class PropertyDatatable < AjaxDatatablesRails::ActiveRecord
 
   def sanitize_price
     ->(value) do
-      search = value.tr('R$', '')
-      search = search.tr('.', '')
-      search = search.tr(',', '.')
-      search
+      value.tr('R$', '').tr('.', '').tr(',', '')
     end
   end
 end

@@ -44,6 +44,7 @@ gem 'draper', '~> 4.0.1'
 gem 'ajax-datatables-rails', '~> 1.2.0'
 gem 'simple_form', '~> 5.0.2'
 gem 'data-confirm-modal', '~> 1.6.3'
+gem 'money-rails', '~> 1.13.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

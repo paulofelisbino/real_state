@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_19_003723) do
+ActiveRecord::Schema.define(version: 2020_04_22_003046) do
 
   create_table "properties", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "bathrooms", default: 0
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_04_19_003723) do
     t.integer "parking_space", default: 0
     t.boolean "pet_friendly", default: false
     t.integer "property_type_id"
-    t.decimal "price", precision: 10, scale: 2
+    t.bigint "price_cents"
     t.string "reference"
     t.integer "rooms", default: 0
     t.integer "size"

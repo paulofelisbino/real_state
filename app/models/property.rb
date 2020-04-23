@@ -10,6 +10,9 @@ class Property < ApplicationRecord
 
   validates :reference, uniqueness: true
 
+  monetize :price_cents
+  validates_with CustomMoneyValidator # workaround numericality money gem bug
+
   def self.validate_filter_category(filter)
     category = filter.to_s.downcase.strip
     raise ArgumentError, 'Invalid filter' unless category_enum_valid?(category)

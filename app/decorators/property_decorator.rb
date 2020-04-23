@@ -6,10 +6,6 @@ class PropertyDecorator < ApplicationDecorator
     rent: I18n.t('activerecord.enums.property.category.rent'),
   }
 
-  def formatted_price
-    format_to_currency(object.price)
-  end
-
   def mapped_category
     CATEGORY_MAPPING[object.category.to_sym]
   end

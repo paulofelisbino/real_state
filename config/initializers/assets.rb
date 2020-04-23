@@ -16,4 +16,5 @@ Rails.application.config.assets.precompile += %w(
   sb-admin-2.min.js
   datatables.js
   dataTables.bootstrap4.min.css
+  forms.js
 )

@@ -1,12 +1,5 @@
 pt-BR:
   activerecord:
-    models:
-      property:
-        one: Imóvel
-        other: Imóveis
-      property_type:
-        one: Tipo de Imóvel
-        other: Tipos de Imóvel
     attributes:
       property:
         bathrooms: 'Banheiros'
@@ -28,5 +21,14 @@ pt-BR:
         category:
           sell: 'Vendas'
           rent: 'Locação'
-
-  
+    errors:
+      messages:
+        property:
+          money_error: 'deve estar entre R$ 0,01 e R$ 999.999.999.999.999,99'
+    models:
+      property:
+        one: Imóvel
+        other: Imóveis
+      property_type:
+        one: Tipo de Imóvel
+        other: Tipos de Imóvel

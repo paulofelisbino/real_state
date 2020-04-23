@@ -1,7 +1,10 @@
 module Admin
   class PropertiesController < ApplicationController
+    include InputHelper
+
     before_action :set_filter_category, only: [:index, :datatable]
     before_action :set_property, only: [:show, :edit, :update, :destroy]
+    before_action :sanitize_price,  only: [:create, :update]
 
     def index
       presenter_params = {
@@ -23,7 +26,7 @@ module Admin
 
     def create
       @property = Property.new(property_params)
-  
+
       respond_to do |format|
         if @property.save
           format.html do
@@ -44,7 +47,7 @@ module Admin
             redirect_to admin_property_path(@property)
           end
         else
-          format.html
+          format.html { render :edit }
         end
       end
     end
@@ -79,6 +82,10 @@ module Admin
 
     def set_property
       @property = Property.find(permitted_params[:id])
+    end
+
+    def sanitize_price
+      property_params[:price] = strip_input_mask(property_params[:price])
     end
 
     def permitted_params
