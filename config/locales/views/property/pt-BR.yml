@@ -1,0 +1,16 @@
+pt-BR:
+  property:
+    index:
+      title: 'Imóveis'
+      subtitle:
+        all: 'Todos'
+        rent: 'Locação'
+        sell: 'Vendas'
+      table:
+        property_type: 'Tipo de imóvel'
+    edit:
+      title: 'Editando Imóvel'
+    show:
+      title: 'Visualizando Imóvel'
+    create:
+      title: 'Criando Imóvel'

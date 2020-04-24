@@ -1,0 +1,34 @@
+pt-BR:
+  activerecord:
+    attributes:
+      property:
+        bathrooms: 'Banheiros'
+        category: 'Categoria'
+        description: 'Descrição'
+        furniture: 'Mobiliado'
+        parking_space: 'Vagas'
+        pet_friendly: 'Aceita pet'
+        price: 'Valor'
+        property_type: 'Tipo de imóvel'
+        reference: 'Referência'
+        rooms: 'Quartos'
+        size: 'Área (m²)'
+        title: 'Título'
+      property_type:
+        name: 'Nome'
+    enums:
+      property:
+        category:
+          sell: 'Vendas'
+          rent: 'Locação'
+    errors:
+      messages:
+        property:
+          money_error: 'deve estar entre R$ 0,01 e R$ 999.999.999.999.999,99'
+    models:
+      property:
+        one: Imóvel
+        other: Imóveis
+      property_type:
+        one: Tipo de Imóvel
+        other: Tipos de Imóvel

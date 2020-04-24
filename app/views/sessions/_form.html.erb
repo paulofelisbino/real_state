@@ -1,0 +1,13 @@
+<%= simple_form_for :session, url: session_path do |form| %>
+
+  <%= form.input :email, type: 'email', label: false, placeholder: "login", input_html: { class: 'fadeIn second'  } %>
+
+  <%= form.input :password, type: 'password', label: false, placeholder: "password", input_html: { class: 'fadeIn third'  } %>
+
+  <%= form.submit 'Login', class: "fadeIn fourth" %>
+<% end %>
+
+<div id="formFooter">
+  <%# <% link_to t(".forgot_password"), new_password_path, class: 'small'  %>
+  <%= link_to t(".forgot_password"), '#', class: 'small'  %>
+</div>

@@ -1,0 +1,12 @@
+pt-BR:
+  simple_form:
+    placeholders:
+      property:
+        bathrooms: 'Banheiros'
+        description: 'Descrição'
+        parking_space: 'Vagas'
+        price: 'Valor'
+        reference: 'Referência'
+        rooms: 'Quartos'
+        size: 'Área'
+        title: 'Título'
