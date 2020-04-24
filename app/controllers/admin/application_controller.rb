@@ -1,9 +1,7 @@
 module Admin
   class ApplicationController < ActionController::Base
-    before_action :authenticate_admin
+    include Clearance::Controller
 
-    def authenticate_admin
-      # TODO Add authentication logic here.
-    end
+    before_action :require_login
   end
 end

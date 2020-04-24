@@ -17,4 +17,6 @@ Rails.application.config.assets.precompile += %w(
   datatables.js
   dataTables.bootstrap4.min.css
   forms.js
+  login.css
+  login.js
 )

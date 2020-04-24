@@ -21,3 +21,9 @@ property_types.map { |property_type| PropertyType.create(name: property_type) }
     title: "Casa #{n + 1}"
   })
 end
+
+User.create!(
+  username: 'teste',
+  email: 'teste@imobiliaria.com',
+  password: '123456'
+)
