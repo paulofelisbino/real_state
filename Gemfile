@@ -37,7 +37,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'rails-i18n', '~> 5.1.3'
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails', '~> 4.3.5'
 gem 'font_awesome5_rails', '~> 1.1.1'
 gem 'draper', '~> 4.0.1'
