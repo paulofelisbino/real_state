@@ -1,0 +1,1 @@
+$(document).ready(function(){var e={prefix:"R$ ",numeral:!0,rawValueTrimPrefix:!0,numeralDecimalMark:",",delimiter:"."};$("input.currency-input-mask").each(function(){new Cleave($(this),e)})});

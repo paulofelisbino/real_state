@@ -15,7 +15,7 @@ property_types.map { |property_type| PropertyType.create(name: property_type) }
     category: random_category,
     description: 'Uma casa.',
     price: rand(1000...100000),
-    property_type: PropertyType.find( rand(1..3) ),
+    property_type: PropertyType.first,
     reference: reference,
     size: 48,
     title: "Casa #{n + 1}"
