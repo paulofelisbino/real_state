@@ -1,5 +1,7 @@
 build:
   docker:
-    web: Dockerfile
+    web: Dockerfile.prod
+  config:
+    MYSQL_DB_HOST: mysql2://b51dbd0504461c:998cc785@us-cdbr-iron-east-01.cleardb.net/heroku_02dcb105dd9eca8?reconnect=true
 run:
   web: bundle exec puma -C config/puma.rb
