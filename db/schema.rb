@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_09_003648) do
+ActiveRecord::Schema.define(version: 2020_05_09_143938) do
 
   create_table "addresses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "address"
@@ -37,12 +37,24 @@ ActiveRecord::Schema.define(version: 2020_05_09_003648) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "address_id"
-    t.integer "rent_insurance"
     t.index ["category"], name: "index_properties_on_category"
     t.index ["property_type_id"], name: "index_properties_on_property_type_id"
   end
 
+  create_table "properties_rent_insurances", id: false, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "property_id"
+    t.bigint "rent_insurance_id"
+    t.index ["property_id"], name: "index_properties_rent_insurances_on_property_id"
+    t.index ["rent_insurance_id"], name: "index_properties_rent_insurances_on_rent_insurance_id"
+  end
+
   create_table "property_types", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "rent_insurances", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

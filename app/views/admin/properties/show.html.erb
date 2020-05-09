@@ -29,8 +29,8 @@
 
 <% if @property.rent? %>
   <p>
-    <strong><%= t('activerecord.attributes.property.rent_insurance') %>:</strong>
-    <%= @property.mapped_rent_insurance %>
+    <strong><%= t('activerecord.attributes.property.rent_insurances') %>:</strong>
+    <%= @property.rent_insurances.map(&:name).join(', ') %>
   </p>
 <% end %>
 

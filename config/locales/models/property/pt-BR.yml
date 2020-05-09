@@ -11,7 +11,7 @@ pt-BR:
         price: 'Valor'
         property_type: 'Tipo de imóvel'
         reference: 'Referência'
-        rent_insurance: 'Garantia exigida'
+        rent_insurances: 'Garantias exigidas'
         rooms: 'Quartos'
         size: 'Área (m²)'
         title: 'Título'
@@ -29,11 +29,6 @@ pt-BR:
         category:
           sell: 'Vendas'
           rent: 'Locação'
-        rent_insurance:
-          deposit: 'Depósito'
-          bank: 'Fiança bancária'
-          guarantor: 'Fiador'
-          other: 'Outro'
     errors:
       messages:
         property:

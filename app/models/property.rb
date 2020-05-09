@@ -2,16 +2,18 @@ class Property < ApplicationRecord
   belongs_to :property_type
   belongs_to :address
 
+  has_and_belongs_to_many :rent_insurances
+
   accepts_nested_attributes_for :address
+  accepts_nested_attributes_for :rent_insurances, allow_destroy: true
 
   enum category: { sell: 0, rent: 1 }
-  enum rent_insurance: { deposit: 0, bank: 1, guarantor: 2, other: 3 }
 
   delegate :name, to: :property_type, prefix: true
 
   validates :bathrooms, :category, :parking_space, :price,
             :reference, :rooms, :size, :title, presence: true
-  validates :rent_insurance, presence: true, if: :property_to_rent?
+  validates :rent_insurances, presence: true, if: :property_to_rent?
 
   validates :reference, uniqueness: true
 
