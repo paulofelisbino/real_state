@@ -26,6 +26,14 @@
   <strong><%= t('activerecord.attributes.property.category') %>:</strong>
   <%= @property.mapped_category %>
 </p>
+
+<% if @property.rent? %>
+  <p>
+    <strong><%= t('activerecord.attributes.property.rent_insurance') %>:</strong>
+    <%= @property.mapped_rent_insurance %>
+  </p>
+<% end %>
+
 <p>
   <strong><%= t('activerecord.attributes.property.property_type') %>:</strong>
   <%= @property.property_type_name %>

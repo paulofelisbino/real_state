@@ -5,11 +5,13 @@ class Property < ApplicationRecord
   accepts_nested_attributes_for :address
 
   enum category: { sell: 0, rent: 1 }
+  enum rent_insurance: { deposit: 0, bank: 1, guarantor: 2, other: 3 }
 
   delegate :name, to: :property_type, prefix: true
 
   validates :bathrooms, :category, :parking_space, :price,
             :reference, :rooms, :size, :title, presence: true
+  validates :rent_insurance, presence: true, if: :property_to_rent?
 
   validates :reference, uniqueness: true
 
@@ -28,6 +30,10 @@ class Property < ApplicationRecord
   end
 
   private
+
+  def property_to_rent?
+    rent?
+  end
 
   def self.category_enum_value(value)
     defined_enums.deep_symbolize_keys.dig(:category, value.to_sym)

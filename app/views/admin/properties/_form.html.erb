@@ -11,6 +11,9 @@
   <%= f.error_notification %>
 
   <%= f.input :category, collection: PropertyDecorator::CATEGORY_MAPPING, label_method: :last, value_method: :first, include_blank: false %>
+
+  <%= f.input :rent_insurance, collection: PropertyDecorator::RENT_INSURANCE_MAPPING, label_method: :last, value_method: :first, include_blank: true %>
+
   <%= f.association :property_type, include_blank: false %>
 
   <%= f.input :reference, placeholder: t('simple_form.placeholders.property.reference') %>
