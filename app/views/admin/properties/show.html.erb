@@ -48,6 +48,10 @@
 </p>
 
 <%= render 'admin/addresses/show', address: @property.address %>
+<p>
+  <strong><%= t('activerecord.attributes.property.show_address') %>:</strong>
+  <%= I18n.t("boolean.#{@property.show_address}") %>
+</p>
 
 <p>
   <strong><%= t('activerecord.attributes.property.price') %>:</strong>

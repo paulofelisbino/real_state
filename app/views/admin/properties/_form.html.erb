@@ -25,6 +25,7 @@
 
     <%= render 'admin/addresses/nested_form', f: fa %>
   <% end%>
+  <%= f.input :show_address, wrapper: :custom_boolean_switch  %>
 
   <%= f.input :price, input_html: { class: 'currency-mask' }, placeholder: t('simple_form.placeholders.property.price') %>
   <%= f.input :size, placeholder: t('simple_form.placeholders.property.size') %>

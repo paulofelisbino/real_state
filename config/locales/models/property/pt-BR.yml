@@ -14,6 +14,7 @@ pt-BR:
         rent_insurances: 'Garantias exigidas'
         rooms: 'Quartos'
         size: 'Área (m²)'
+        show_address: 'Mostrar endereço'
         title: 'Título'
         property/address:
           address: 'Endereço'

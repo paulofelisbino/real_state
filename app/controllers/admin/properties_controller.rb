@@ -97,8 +97,8 @@ module Admin
     def property_params
       params.require(:property).permit(
         :bathrooms, :category, :description, :furniture, :parking_space,
-        :pet_friendly, :property_type_id, :price, :reference, :rooms, :size,
-        :title,
+        :pet_friendly, :property_type_id, :price, :reference, :rooms,
+        :show_address, :size, :title,
         address_attributes: [
           :address, :city, :complement, :id, :neighborhood, :state, :zipcode
         ],
