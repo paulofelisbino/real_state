@@ -1,5 +1,8 @@
 class Property < ApplicationRecord
   belongs_to :property_type
+  belongs_to :address
+
+  accepts_nested_attributes_for :address
 
   enum category: { sell: 0, rent: 1 }
 

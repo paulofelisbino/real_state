@@ -19,9 +19,11 @@ module Admin
 
     def new
       @property = Property.new
+      @property.build_address
     end
 
     def edit
+      @property.build_address if @property.address.nil?
     end
 
     def create
@@ -96,7 +98,9 @@ module Admin
       params.require(:property).permit(
         :bathrooms, :category, :description, :furniture, :parking_space,
         :pet_friendly, :property_type_id, :price, :reference, :rooms, :size,
-        :title
+        :title, address_attributes: [
+          :address, :city, :complement, :id, :neighborhood, :state, :zipcode
+        ]
       )
     end
   end

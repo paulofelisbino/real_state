@@ -36,6 +36,7 @@ Rails.application.routes.draw do
   ############################
 
   get 'dataTablesI18n/:lang', to: 'datatables#datatable_i18n'
+  get 'addresses/find_by_zipcode/:zipcode', to: 'addresses#find_by_zipcode'
 
   root to: "home#index"
 end

@@ -1,6 +1,15 @@
 property_types = ['Residencial', 'Comercial', 'Terreno']
 property_types.map { |property_type| PropertyType.create(name: property_type) }
 
+address = Address.create!(
+  address: 'Rua Scuvero',
+  neighborhood: 'Cambuci',
+  city: 'São Paulo',
+  state: 'SP',
+  zipcode: '01527-000',
+  complement: 'apto 86'
+)
+
 100.times.map do |n|
   random_category = rand(0..1)
 
@@ -16,6 +25,7 @@ property_types.map { |property_type| PropertyType.create(name: property_type) }
     description: 'Uma casa.',
     price: rand(1000...100000),
     property_type: PropertyType.first,
+    address: address,
     reference: reference,
     size: 48,
     title: "Casa #{n + 1}"

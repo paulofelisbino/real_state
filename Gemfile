@@ -46,6 +46,7 @@ gem 'simple_form', '~> 5.0.2'
 gem 'data-confirm-modal', '~> 1.6.3'
 gem 'money-rails', '~> 1.13.3'
 gem 'clearance', '~> 2.1.0'
+gem 'correios-cep', '~> 0.8.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

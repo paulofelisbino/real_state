@@ -38,6 +38,9 @@
   <strong><%= t('activerecord.attributes.property.title') %>:</strong>
   <%= @property.title %>
 </p>
+
+<%= render 'admin/addresses/show', address: @property.address %>
+
 <p>
   <strong><%= t('activerecord.attributes.property.price') %>:</strong>
   <%= @property.price.format %>

@@ -1,6 +1,6 @@
 <%
   content_for :javascript do
-    javascript_include_tag 'forms.js'
+    javascript_include_tag 'forms/forms.js'
   end
 %>
 
@@ -16,7 +16,14 @@
   <%= f.input :reference, placeholder: t('simple_form.placeholders.property.reference') %>
   <%= f.input :title, placeholder: t('simple_form.placeholders.property.title') %>
 
-  <%= f.input :price, input_html: { class: 'currency-input-mask' }, placeholder: t('simple_form.placeholders.property.price') %>
+  <%= f.simple_fields_for(:address,
+        wrapper: :floating_labels_form,
+        wrapper_mappings: { select: :floating_labels_select }) do |fa| %>
+
+    <%= render 'admin/addresses/nested_form', f: fa %>
+  <% end%>
+
+  <%= f.input :price, input_html: { class: 'currency-mask' }, placeholder: t('simple_form.placeholders.property.price') %>
   <%= f.input :size, placeholder: t('simple_form.placeholders.property.size') %>
   <%= f.input :rooms, placeholder: t('simple_form.placeholders.property.rooms') %>
   <%= f.input :bathrooms, placeholder: t('simple_form.placeholders.property.bathrooms') %>

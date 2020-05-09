@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  // apply money mask
   var inputMaskFormat = {
     prefix: "R$ ",
     numeral: true,
@@ -7,7 +8,7 @@ $(document).ready(function(){
     delimiter: '.'
   };
 
-  $('input.currency-input-mask').each(function(index) {
+  $('input.currency-mask').each(function(index) {
     new Cleave($(this), inputMaskFormat);
   });
 });

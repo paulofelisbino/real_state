@@ -1,0 +1,12 @@
+<%
+  content_for :javascript do
+    javascript_include_tag 'forms/address_form.js'
+  end
+%>
+
+<%= f.input :zipcode, input_html: { class: 'zipcode zipcode-mask' }, placeholder: t('simple_form.placeholders.address.zipcode') %>
+<%= f.input :address, placeholder: t('simple_form.placeholders.address.address') %>
+<%= f.input :complement, placeholder: t('simple_form.placeholders.address.complement') %>
+<%= f.input :neighborhood, placeholder: t('simple_form.placeholders.address.neighborhood') %>
+<%= f.input :state, input_html: { class: 'state-mask' }, placeholder: t('simple_form.placeholders.address.state') %>
+<%= f.input :city, placeholder: t('simple_form.placeholders.address.city') %>

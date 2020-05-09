@@ -1,0 +1,10 @@
+pt-BR:
+  simple_form:
+    placeholders:
+      address:
+        address: 'Endereço'
+        city: 'Cidade'
+        complement: 'Complemento'
+        neighborhood: 'Bairro'
+        state: 'Estado'
+        zipcode: 'CEP'
